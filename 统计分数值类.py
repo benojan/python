@@ -1,4 +1,7 @@
 __author__:Skoj
+
+'''给其他调用'''
+
 import codecs
 
 #学生类
