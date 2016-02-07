@@ -1,3 +1,4 @@
+__author__:Skoj
 import codecs
 
 #学生类
