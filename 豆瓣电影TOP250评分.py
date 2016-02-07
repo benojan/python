@@ -4,9 +4,7 @@ import urllib.request, re
 
 def get(url):
     hd = {"User-Agent":"Mozilla/5.0 (Windows NT 6.1; rv:44.0) Gecko/20100101 Firefox/44.0",
-            "Host":"movie.douban.com",
-            "Referer":"http://www.qlcoder.com/task/7560"
-    }
+        "Host":"movie.douban.com"}
 
     req = urllib.request.Request(url,headers=hd)
     html = urllib.request.urlopen(req)
