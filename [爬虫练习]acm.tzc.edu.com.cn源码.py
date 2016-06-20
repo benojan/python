@@ -1,5 +1,6 @@
 __author__ = 'Skoj'
 #爬取acm.tzc.edu.com.cn中，帐号下提交的源码
+#参考网址：http://www.2cto.com/kf/201305/209931.html
 
 import urllib.request, re
 import http.cookiejar
