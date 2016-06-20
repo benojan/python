@@ -31,21 +31,21 @@ pid = re.findall(reg, html)
 #遍历题目号对应的提交成功列表
 for id in pid:
   #取出提交的代码所对应的编号
-	req = urllib.request.Request('http://acm.tzc.edu.cn/acmhome/showstatus.do?userName=benojan&problemId='+id, headers=headers)
-	html = urllib.request.urlopen(req)
-	html = html.read().decode("gbk")
-	reg = r'/acmhome/solutionCode\.do\?id=([\da-z]+)'
-	reg = re.compile(reg)
-	cid = re.findall(reg, html)
-	
-	# 读取源代码
-	req = urllib.request.Request("http://acm.tzc.edu.cn/acmhome/solutionCode.do?id="+cid[0], headers=headers)
-	html = urllib.request.urlopen(req)
-	html = html.read().decode("gbk")
-	reg = r'readonly>((.|\n)*)</textarea>'
-	reg = re.compile(reg)
-	code = re.findall(reg, html)
-	
-	# 将源代码保存到当前程序所在的文件夹下，以题目pid为文件名
-	with codecs.open(os.getcwd() + '\\' + id + '.txt','w','utf-8') as f:
-		f.write(code[0][0])
+  req = urllib.request.Request('http://acm.tzc.edu.cn/acmhome/showstatus.do?userName=benojan&problemId='+id, headers=headers)
+  html = urllib.request.urlopen(req)
+  html = html.read().decode("gbk")
+  reg = r'/acmhome/solutionCode\.do\?id=([\da-z]+)'
+  reg = re.compile(reg)
+  cid = re.findall(reg, html)
+  
+  # 读取源代码
+  req = urllib.request.Request("http://acm.tzc.edu.cn/acmhome/solutionCode.do?id="+cid[0], headers=headers)
+  html = urllib.request.urlopen(req)
+  html = html.read().decode("gbk")
+  reg = r'readonly>((.|\n)*)</textarea>'
+  reg = re.compile(reg)
+  code = re.findall(reg, html)
+  
+  # 将源代码保存到当前程序所在的文件夹下，以题目pid为文件名
+  with codecs.open(os.getcwd() + '\\' + id + '.txt','w','utf-8') as f:
+    f.write(code[0][0])
