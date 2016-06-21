@@ -16,8 +16,10 @@ def get(url):
     urllist = re.findall(reg, html)
     return urllist
 
+count = 1
 for i in range(10):
     url = 'http://movie.douban.com/top250?start='+str(i*25)
     res = get(url)
     for name,s in res:
         print(count,":",name,":",s)
+        count += 1
