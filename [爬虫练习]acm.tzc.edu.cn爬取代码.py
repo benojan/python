@@ -2,15 +2,15 @@ import requests
 from bs4 import BeautifulSoup
 
 params = {
-    "userName": "benojan",
-    "password": "10tenet01",
+    "userName": "********",
+    "password": "********",
 }
 r = requests.Session()
 res = r.post("http://acm.tzc.edu.cn/acmhome/login.do", data=params)
 
 for i in range(1001, 1101):
     params = {
-        "userName": "benojan",
+        "userName": "********",
         "problemId": i,
     }
 
