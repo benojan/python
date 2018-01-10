@@ -1,3 +1,2 @@
 # Python
-此处存放我的一些小程序~
-delete
+Keh tae khong ngo zy ki shia keh ih he python code.
